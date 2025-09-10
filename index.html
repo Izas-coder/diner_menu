@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Checkpoint 8: JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    section {
+      background: white;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #005f73;
+    }
+
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+
+    img {
+      margin-top: 10px;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+    <h1>Exposición sobre Herramientas Modernas de JavaScript</h1>
+
+    <section>
+        <h2>Sección: Introducción a las Herramientas Modernas de JavaScript</h2>
+        <p>Esta sección presenta las principales herramientas y conceptos que facilitan el trabajo en JavaScript hoy en día, ayudando desde la manipulación sencilla de datos hasta la depuración eficiente y organización del código.</p>
+    </section>
+
+    <section>
+        <h2>Overview of Lodash JavaScript Library</h2>
+        <p><strong>¿Qué es?</strong><br>
+        Lodash es una biblioteca muy popular en JavaScript que ofrece funciones predefinidas para tareas comunes, como manipular listas, objetos o funciones, lo cual hace que el código sea más limpio y menos propenso a errores.</p>
+        <p><strong>Ejemplo mundano:</strong><br>
+        Supón que tienes una lista de tus compras en diferentes tiendas y quieres agrupar todos los productos que pertenecen a la misma categoría. Sin Lodash, tendrías que recorrer la lista y crear tu propio código para agruparlos, pero con Lodash, simplemente usas <em>groupBy</em>.</p>
+    </section>
+
+    <section>
+        <h2>Funciones Populares de Lodash: keyBy, reduce y random</h2>
+        <ul>
+            <li><strong>keyBy:</strong>  
+                Convierte una lista de objetos en un diccionario, donde la clave será un atributo del objeto, como el ID.
+                <br><em>Ejemplo:</em> Tienes una lista de usuarios:
+                <pre>
+const usuarios = [
+  { id: 1, nombre: 'Ana' },
+  { id: 2, nombre: 'Luis' }
+];  
+// Con keyBy, puedes acceder fácilmente como un diccionario:
+const usuariosPorId = _.keyBy(usuarios, 'id');
+console.log(usuariosPorId[1]); // { id: 1, nombre: 'Ana' }
+                </pre>
+            </li>
+            <li><strong>reduce:</strong>  
+                Permite reducir una lista a un único valor, como sumar precios o concatenar textos.
+                <br><em>Ejemplo:</em> Calcular el total del precio de productos:
+                <pre>
+const precios = [10, 20, 30];
+const total = _.reduce(precios, (suma, precio) => suma + precio, 0);
+console.log(total); // 60
+                </pre>
+            </li>
+            <li><strong>random:</strong>  
+                Genera números aleatorios, útil para simulaciones o sorteos.
+                <br><em>Ejemplo:</em> Seleccionar un premio aleatorio entre varios:
+                <pre>
+const premios = ['Laptop', 'Smartphone', 'Tablet'];
+const ganadorIndex = _.random(0, premios.length - 1);
+console.log(`Ganador: ${premios[ganadorIndex]}`);
+                </pre>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Overview of the JavaScript Debugger</h2>
+        <p><strong>¿Qué es?</strong><br>
+        Una herramienta integrada en los navegadores o en editores de código para inspeccionar, detener, y modificar la ejecución del código paso a paso.</p>
+        <p><strong>Ejemplo mundano:</strong><br>
+        Imagina que estás cocinando y la receta no sale bien. Usas el depurador para revisar paso a paso en qué momento algo salió mal, como si revisaras cada ingrediente y paso en la receta para corregirlo.</p>
+    </section>
+
+    <section>
+        <h2>Overview of Quokka.js Extension</h2>
+        <p><strong>¿Qué es?</strong><br>
+        Una extensión que permite ejecutar código JavaScript en el editor, mostrando los resultados instantáneamente al escribir, sin tener que ejecutar todo en el navegador o consola.</p>
+        <p><strong>Ejemplo:</strong><br>
+        Es como tener un cuaderno donde escribes una fórmula matemática y, al instante, ves el resultado sin tener que hacer cálculos manuales o ejecutar programas: simplemente ves el resultado en tu editor.</p>
+    </section>
+    <section>
+            <h2>¿Qué consigues con NPM?</h2>
+        <ul>
+            <li><span class="emoji">📦</span> <strong>Reutilizar código:</strong> En lugar de construir TODO desde cero, puedes "comprar" piezas ya hechas</li>
+            <li><span class="emoji">⚡</span> <strong>Ahorro de tiempo:</strong> Lo que tardabas horas en programar, lo instalas en segundos</li>
+            <li><span class="emoji">🔧</span> <strong>Funcionalidades profesionales:</strong> Calendarios, gráficas, animaciones... todo listo para usar</li>
+        </ul>
+
+        <pre>
+npm install lodash      # "Comprar" herramientas útiles
+npm install bootstrap   # "Comprar" estilos bonitos  
+npm install chart.js    # "Comprar" gráficas
+npm start              # "Encender" tu proyecto
+        </pre>
+    </section>
+
+    <section>
+        <h2><span class="tool-icon">🏭</span> js-generate - Tu Arquitecto Personal</h2>
+        
+        <div class="analogy-box">
+            <p><strong>¿Qué es?</strong> Un asistente que te crea la estructura básica de tu proyecto automáticamente.</p>
+            <p><strong>Analogía:</strong> Es como tener un arquitecto que te hace los planos de la casa: te dice dónde va la cocina, dónde el baño, te pone las bases... tú solo tienes que decorar.</p>
+        </div>
+
+        <h3>¿Qué consigues con js-generate?</h3>
+        <ul>
+            <li><span class="emoji">📁</span> <strong>Estructura organizada:</strong> Te crea todas las carpetas en su sitio</li>
+            <li><span class="emoji">📄</span> <strong>Archivos básicos listos:</strong> HTML, CSS, JavaScript ya conectados</li>
+            <li><span class="emoji">⏰</span> <strong>Ahorro de trabajo repetitivo:</strong> No escribes el código aburrido de siempre</li>
+        </ul>
+
+        <pre>
+js-generate project mi-web      # Crear estructura completa
+js-generate component header    # Crear una pieza específica
+        </pre>
+
+        <div class="highlight-box">
+            <strong>Lo que te crea automáticamente:</strong>
+            <pre>
+mi-proyecto/
+├── index.html        # Tu página principal
+├── style.css         # Los estilos
+├── app.js           # La lógica
+├── package.json     # La "lista de la compra" 
+└── README.md        # Las instrucciones
+            </pre>
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="tool-icon">💻</span> Visual Studio Code - Tu Taller Inteligente</h2>
+        
+        <div class="analogy-box">
+            <p><strong>¿Qué es?</strong> Tu mesa de trabajo súper inteligente donde escribes código.</p>
+            <p><strong>Analogía:</strong> Es como tener un taller con todas las herramientas organizadas, buena luz, y un asistente que te dice "cuidado, ese tornillo está flojo".</p>
+        </div>
+
+        <h3>¿Qué consigues con VS Code?</h3>
+        <ul>
+            <li><span class="emoji">✨</span> <strong>Autocompletado:</strong> Escribe por ti (como el T9 del móvil pero para código)</li>
+            <li><span class="emoji">🚨</span> <strong>Detección de errores:</strong> Te dice "ojo, aquí hay un problema" antes de que explote</li>
+            <li><span class="emoji">📋</span> <strong>Organización:</strong> Mantiene todos tus archivos ordenados</li>
+            <li><span class="emoji">👁️</span> <strong>Vista previa:</strong> Ves los cambios al instante</li>
+        </ul>
+
+        <div class="highlight-box">
+            <strong>Ejemplo de autocompletado:</strong>
+            <pre>
+// Empiezas a escribir...
+const user = {
+  name: "Juan",
+  age: 25
+};
+
+// VS Code te sugiere automáticamente:
+user.n → user.name
+user.a → user.age
+            </pre>
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="tool-icon">🌐</span> Browser Local (Live Server) - Tu Sala de Exposiciones</h2>
+        
+        <div class="analogy-box">
+            <p><strong>¿Qué es?</strong> Un mini-servidor que te muestra tu página web como si estuviera en internet, pero solo en tu ordenador.</p>
+            <p><strong>Analogía:</strong> Es como tener una sala de exposiciones privada donde puedes probar cómo queda el cuadro en la pared antes de colgarlo en el museo público.</p>
+        </div>
+
+        <h3>¿Qué consigues con Live Server?</h3>
+        <ul>
+            <li><span class="emoji">⚡</span> <strong>Tiempo real:</strong> Ves tu página web funcionando al instante</li>
+            <li><span class="emoji">🔄</span> <strong>Actualización automática:</strong> Cada cambio se refleja inmediatamente</li>
+            <li><span class="emoji">📱</span> <strong>Vista multi-dispositivo:</strong> Pruebas cómo se ve en móvil, tablet, etc.</li>
+            <li><span class="emoji">🔒</span> <strong>Privacidad:</strong> Es tu "página web privada" para probar</li>
+        </ul>
+
+        <div class="workflow-step">
+            <div class="step-number">1</div>
+            <strong>Cambias</strong> el color de un botón en VS Code
+        </div>
+        <div class="workflow-step">
+            <div class="step-number">2</div>
+            <strong>Guardas</strong> el archivo (Ctrl+S)
+        </div>
+        <div class="workflow-step">
+            <div class="step-number">3</div>
+            <strong>¡PUM!</strong> El navegador se actualiza solo y ves el cambio inmediatamente
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="emoji">🔄</span> Cómo Trabajan Juntas Estas Herramientas</h2>
+        
+        <h3>El flujo de trabajo completo:</h3>
+
+        <div class="workflow-step">
+            <div class="step-number">1</div>
+            <strong>js-generate</strong> → Crea la estructura
+            <pre>js-generate project portfolio
+→ Te crea carpetas, archivos básicos, configuración</pre>
+        </div>
+
+        <div class="workflow-step">
+            <div class="step-number">2</div>
+            <strong>NPM</strong> → Añade funcionalidades
+            <pre>npm install aos
+→ Descarga la librería de animaciones</pre>
+        </div>
+
+        <div class="workflow-step">
+            <div class="step-number">3</div>
+            <strong>Visual Studio Code</strong> → Escribes tu código
+            <pre>- Abres los archivos
+- Escribes tu HTML, CSS, JavaScript
+- Te ayuda con sugerencias y detecta errores</pre>
+        </div>
+
+        <div class="workflow-step">
+            <div class="step-number">4</div>
+            <strong>Live Server</strong> → Ves el resultado
+            <pre>- Clic derecho → "Open with Live Server"
+- Se abre tu navegador automáticamente
+- Cada cambio se actualiza al instante</pre>
+        </div>
+    </section>
+
+    <section>
+        <h2><span class="emoji">🎯</span> Antes vs. Ahora</h2>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>ANTES (JavaScript tradicional)</th>
+                    <th>AHORA (con herramientas modernas)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="before">❌ Escribías todo el código desde cero</td>
+                    <td class="after">✅ Reutilizas código de miles de desarrolladores</td>
+                </tr>
+                <tr>
+                    <td class="before">❌ Actualizabas el navegador manualmente</td>
+                    <td class="after">✅ Ves cambios automáticamente</td>
+                </tr>
+                <tr>
+                    <td class="before">❌ Descubrías errores cuando ya era tarde</td>
+                    <td class="after">✅ Detectas errores antes de que exploten</td>
+                </tr>
+                <tr>
+                    <td class="before">❌ Copiar y pegar código de todos lados</td>
+                    <td class="after">✅ Estructura organizada desde el primer día</td>
+                </tr>
+                <tr>
+                    <td class="before">❌ Desorganización total</td>
+                    <td class="after">✅ Desarrollo profesional y eficiente</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2><span class="emoji">🚀</span> Ejemplo Práctico: Crear una Página Web Moderna</h2>
+        
+        <div class="highlight-box">
+            <h3>Resultado Final:</h3>
+            <p><strong>Sin herramientas:</strong> 2-3 horas para tener algo básico funcionando</p>
+            <p><strong>Con herramientas:</strong> <strong style="color: #005f73;">5 minutos</strong> para tener una base profesional lista</p>
+        </div>
+
+        <div class="workflow-step">
+            <div class="step-number">1</div>
+            <strong>Crear estructura</strong>
+            <pre>js-generate project mi-pagina-genial
+→ En 2 segundos tienes toda la estructura lista</pre>
+        </div>
+
+        <div class="workflow-step">
+            <div class="step-number">2</div>
+            <strong>Añadir funcionalidades</strong>
+            <pre>npm install bootstrap    # Para que se vea bonita
+npm install aos         # Para animaciones
+→ En 10 segundos tienes estilos y animaciones profesionales</pre>
+        </div>
+
+        <div class="workflow-step">
+            <div class="step-number">3</div>
+            <strong>Abrir en VS Code</strong>
+            <pre>code .
+→ Tu taller de trabajo se abre con todo organizado</pre>
+        </div>
+
+        <div class="workflow-step">
+            <div class="step-number">4</div>
+            <strong>Activar preview en vivo</strong>
+            <pre>Clic derecho en index.html → "Open with Live Server"
+→ Tu página se abre automáticamente en el navegador</pre>
+        </div>
+
+        <div class="workflow-step">
+            <div class="step-number">5</div>
+            <strong>¡Crear!</strong>
+            <pre>→ Cada vez que escribes algo y guardas, lo ves instantáneamente</pre>
+        </div>
+    </section>
+    <section>
+       <h2>Cómo crear un módulo en NPM</h2>
+<p>Pre-requisitos</p>
+<p>
+<ul>
+    <li>Tener cuenta en Github.</li>
+    <li>Tener cuenta en NPM.</li>
+    <li> Node, NPM y Git instalados.</li>
+</ul></p>
+
+<p>Paso 1: </p>
+<p>
+    <ul> 
+<li>Crear repositorio en Github
+    Asegura de marcar la opción para agregar un README al proyecto, agregar .gitignore para Node y licencia MIT.</li>
+<li>Clona el repositorio localmente.</li>
+<li>Press enter or click to view image in full size</li>
+</ul></p>
+<p>Información en el siguiente url</p>
+<a href="https://medium.com/p/11ff8c1c699f">Resource page</a>
+    </section>
+
+   </body>
+</html>
